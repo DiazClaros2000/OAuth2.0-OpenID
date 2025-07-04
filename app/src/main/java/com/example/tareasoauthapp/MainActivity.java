@@ -15,6 +15,13 @@ import net.openid.appauth.AuthorizationRequest;
 import net.openid.appauth.AuthorizationService;
 import net.openid.appauth.ResponseTypeValues;
 
+import net.openid.appauth.AuthorizationService;
+import net.openid.appauth.AuthorizationServiceConfiguration;
+import net.openid.appauth.AuthorizationRequest;
+import net.openid.appauth.ResponseTypeValues;
+import net.openid.appauth.AuthorizationResponse;
+import net.openid.appauth.AuthorizationException;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final int RC_AUTH = 100;
@@ -28,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         AuthorizationServiceConfiguration serviceConfig =
                 new AuthorizationServiceConfiguration(
                         Uri.parse("https://accounts.google.com/o/oauth2/v2/auth"),
-                        Uri.parse("com.example.tareasoauthapp:/callback")
+                        Uri.parse("https://oauth2.googleapis.com/token")
                 );
 
         AuthorizationRequest request = new AuthorizationRequest.Builder(
